@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.demothuctap.MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/rlMenuActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="53.33dp"
+        android:background="@color/color.bacground_menu_actionbar" >
+
+        <ImageView
+            android:id="@+id/imgIcRowsActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_rows_actionbar" />
+
+        <TextView
+            android:id="@+id/ivTitleActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/textview.text.title_menu_actionbar"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lvShowData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlMenuActionBar"
+        android:background="#ffffff" >
+    </ListView>
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+	<RelativeLayout 
+	    android:id="@+id/rlLayoutTitle"
+	    android:layout_width="match_parent"
+	    android:layout_height="150dp"
+	    android:background="#00bbd2"
+	    >
+	    <ImageView 
+	        android:id="@+id/imgPersion"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_listview_item1"
+	        android:layout_centerVertical="true"
+	        android:layout_marginLeft="20dp"
+	        />
+	    <TextView 
+	        android:id="@+id/tvNamePersion"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Brunch this weekend?"
+	        android:layout_centerVertical="true"
+	        android:layout_toRightOf="@id/imgPersion"
+	        android:layout_marginLeft="20dp"
+	        android:textSize="20dp"
+	        />
+	</RelativeLayout>
+	<RelativeLayout 
+	    android:id="@+id/rlInput"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/rlLayoutTitle"
+	    android:layout_marginTop="30dp"
+	    >
+	    <TextView 
+	        android:id="@+id/tvUserName"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="UserName"
+	        android:textSize="20dp"
+	        android:textColor="#1414a8"
+	        />
+	    <EditText 
+	        android:id="@+id/editUserName"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="Nhap UserName"
+	        android:layout_below="@id/tvUserName"
+	        />
+	     <TextView 
+	        android:id="@+id/tvDecription"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Decription"
+	        android:textSize="20dp"
+	        android:textColor="#1414a8"
+	        android:layout_below="@id/editUserName"
+	        />
+	    <EditText 
+	        android:id="@+id/editDecription"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="Nhap Decription"
+	        android:layout_below="@id/tvDecription"
+	        />
+	</RelativeLayout>
+	
+</RelativeLayout>

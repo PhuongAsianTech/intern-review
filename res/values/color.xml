@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color.bacground_menu_actionbar">#00bbd2</color>
+    <color name="color.textview_item_name">#505050</color>
+</resources>

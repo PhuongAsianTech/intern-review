@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DemoThucTap</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="textview.text.title_menu_actionbar">Contacts</string>
+    <string name="textview.text.item_name_people">Brunch this weekend?</string>
+</resources>

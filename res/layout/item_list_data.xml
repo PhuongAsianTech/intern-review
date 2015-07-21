@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    >
+    <ImageView 
+        android:id="@+id/imgItemPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_listview_item1"
+        android:scaleType="center"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+    <TextView 
+        android:id="@+id/tvTextNameItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview.text.item_name_people"
+        android:textColor="@color/color.textview_item_name"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/imgItemPeople"
+        android:layout_marginLeft="20dp"
+        android:textSize="15dp"
+        />
+    <ImageView 
+        android:id="@+id/imgIconChech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check_listview"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        />
+</RelativeLayout>
