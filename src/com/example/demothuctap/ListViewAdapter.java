@@ -69,45 +69,6 @@ public class ListViewAdapter extends BaseAdapter {
 				mArray.get(position).getImg());
 		holder.txt_name = setTextView(convertView, R.id.tvTextNameItem, mArray
 				.get(position).getText());
-		holder.imgcheck = (ImageView) convertView.findViewById(R.id.imgIconChech);
-		holder.imgcheck.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				mdialog = new Dialog(mContext);
-				mdialog.setContentView(R.layout.custom_dialog);
-				mdialog.setTitle("This is Menu Dialog!");
-				Button btn_edit = (Button) mdialog.findViewById(R.id.btn_edit);
-				Button btn_cancel = (Button) mdialog.findViewById(R.id.btn_cancel);
-				Button btn_delete = (Button) mdialog.findViewById(R.id.btn_delete);
-				btn_cancel.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mdialog.cancel();
-					}
-				});
-				btn_delete.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-					mArray.remove(position);
-						//mAdapter.notifyDataSetChanged();
-						mdialog.cancel();
-					}
-				});
-				btn_edit.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mdialog.cancel();
-						Intent  intentDetail = new Intent(mContext,DetailFragment.class);
-						mContext.startActivity(intentDetail);
-						
-					}
-				});
-				
-				mdialog.show();
-			}
-		});
 		return convertView;
 	}
 

@@ -2,8 +2,16 @@
 <resources>
 
     <string name="app_name">DemoThucTap</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="textview.text.title_menu_actionbar">Contacts</string>
     <string name="textview.text.item_name_people">Brunch this weekend?</string>
+    <string name="button.text.edit">Edit</string>
+    <string name="button.text.delete">Delete</string>
+    <string name="button.text.save">Save</string>
+    <string name="button.text.cancel">Cancel</string>
+     <string name="textview.text.name_persion">Luke Shywalker Bell</string>
+     <string name="button.text.ok">Ok</string>
+     <string name="edittext.hint.username">User Name</string>
+     <string name="edittext.hint.description">Description</string>
+
 </resources>

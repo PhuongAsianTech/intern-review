@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color.bacground_menu_actionbar">#00bbd2</color>
+    <color name="color.background_menu_actionbar">#00bbd2</color>
     <color name="color.textview_item_name">#505050</color>
+    <color name="color.color_line">#d1d1d1</color>
+    <color name="color.background_custom_view">#f9f9f9</color>
+    <color name="color.background_fragment">#ffffff</color>
+    <color name="color.button_save_cancel">#6ba4ff</color>
+    <color name="color.background_dialog">#f2f2f2</color>
 </resources>

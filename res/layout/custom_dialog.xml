@@ -2,38 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#43C6DB" >
+    android:background="@color/color.background_dialog" >
 
     <LinearLayout
         android:id="@+id/llbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTitle"
         android:orientation="horizontal"
         android:weightSum="2" 
         android:layout_marginTop="20dp"
         >
-
-        <Button
-            android:id="@+id/btn_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
+       <TextView 
+           android:id="@+id/btnDialogOk"
+           android:layout_width="match_parent"
+           android:layout_height="30dp"
+           android:text="@string/button.text.ok"
+           android:background="@drawable/custom_view_button_dialog"
+           android:textColor="@color/color.button_save_cancel"
+           android:layout_weight="1"
+           android:gravity="center"
+           />
+       <TextView 
+           android:id="@+id/btnDialogCancel"
+           android:layout_width="match_parent"
+           android:layout_height="30dp"
+           android:text="@string/button.text.cancel"
+           android:background="@drawable/custom_view_button_dialog"
+           android:textColor="@color/color.button_save_cancel"
+           android:layout_weight="1"
+           android:gravity="center"
+           />
     </LinearLayout>
-    <Button 
-        android:id="@+id/btn_cancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:layout_below="@+id/llbutton"
-        />
 
 </RelativeLayout>

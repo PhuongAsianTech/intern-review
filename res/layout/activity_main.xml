@@ -8,7 +8,7 @@
         android:id="@+id/rlMenuActionBar"
         android:layout_width="match_parent"
         android:layout_height="53.33dp"
-        android:background="@color/color.bacground_menu_actionbar" >
+        android:background="@color/color.background_menu_actionbar" >
 
         <ImageView
             android:id="@+id/imgIcRowsActionBar"
