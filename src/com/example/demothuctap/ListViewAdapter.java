@@ -68,7 +68,7 @@ public class ListViewAdapter extends BaseAdapter {
 		holder.img = setImageView(convertView, R.id.imgItemPeople,
 				mArray.get(position).getImg());
 		holder.txt_name = setTextView(convertView, R.id.tvTextNameItem, mArray
-				.get(position).getText());
+				.get(position).getTextName());
 		return convertView;
 	}
 

@@ -7,4 +7,5 @@
     <color name="color.background_fragment">#ffffff</color>
     <color name="color.button_save_cancel">#6ba4ff</color>
     <color name="color.background_dialog">#f2f2f2</color>
+    <color name="color.color_textview_title">#ffffff</color>
 </resources>

@@ -26,6 +26,10 @@
             android:name=".DetailFragment"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".MainFragment"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

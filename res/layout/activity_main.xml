@@ -26,21 +26,15 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/textview.text.title_menu_actionbar"
-            android:textColor="#ffffff"
+            android:textColor="@color/color.color_textview_title"
             android:textSize="20dp" />
     </RelativeLayout>
-
-    <ListView
-        android:id="@+id/lvShowData"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/rlMenuActionBar"
-        android:background="#ffffff" >
-    </ListView>
 
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlMenuActionBar"
+         />
 
 </RelativeLayout>

@@ -1,19 +1,32 @@
 package com.example.demothuctap;
 
 public class Person {
-	String text;
+	String textName,textDescrition;
 	int img;
-	protected String getText() {
-		return text;
+	Person mPerson;
+	public Person(){
+		
+	}
+	protected String getTextName() {
+		return textName;
+	}
+	protected String getTextDescrition() {
+		return textDescrition;
 	}
 	protected int getImg() {
 		return img;
 	}
-	protected void setText(String text) {
-		this.text = text;
+	protected void setTextName(String textName) {
+		this.textName = textName;
+	}
+	protected void setTextDescrition(String textDescrition) {
+		this.textDescrition = textDescrition;
 	}
 	protected void setImg(int img) {
 		this.img = img;
+	}
+	public Person getPerson(){
+		return mPerson;
 	}
 	
 }

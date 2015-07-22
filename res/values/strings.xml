@@ -9,9 +9,10 @@
     <string name="button.text.delete">Delete</string>
     <string name="button.text.save">Save</string>
     <string name="button.text.cancel">Cancel</string>
-     <string name="textview.text.name_persion">Luke Shywalker Bell</string>
-     <string name="button.text.ok">Ok</string>
-     <string name="edittext.hint.username">User Name</string>
-     <string name="edittext.hint.description">Description</string>
+    <string name="textview.text.name_persion">Luke Shywalker Bell</string>
+    <string name="button.text.ok">Ok</string>
+    <string name="edittext.hint.username">User Name</string>
+    <string name="edittext.hint.description">Description</string>
+    <string name="textview.text.question">Are you sure you want to delete Luke Skywalker Bell?</string>
 
 </resources>
