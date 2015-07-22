@@ -16,7 +16,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+/**
+ * 
+ * @author dnp_it
+ * Create DetailFragment 
+ * 
+ */
 public class DetailFragment extends Fragment{
 	private String mName,mDescription;
 	private int mImg;
@@ -24,23 +29,33 @@ public class DetailFragment extends Fragment{
 	private int position;
 	private ArrayList<Person> arr;
 	private EditText edtName,edtDescription;
-	public DetailFragment(String name,int img,String description) {
-		this.mName = name;
-		this.mImg = img;
-		this.mDescription = description;
+	private Person mPerson;
+	
+	interface onClickSave{
+		void onCLick(Person person);
+	}
+	
+	public onClickSave mSave;
+	
+	public void setOnClickSave(onClickSave save){
+		this.mSave = save;
+	}
+	
+	public DetailFragment(Person mPerson) {
+		this.mPerson = mPerson;
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View mView = inflater.inflate(R.layout.fragment_detail, container,false);
 		RelativeLayout rlImg = (RelativeLayout) mView.findViewById(R.id.rlImagePersion);
-		rlImg.setBackgroundResource(mImg);
+		rlImg.setBackgroundResource(mPerson.getImg());
 		TextView tvNamePersion = (TextView) mView.findViewById(R.id.tvNamePersion);
-		tvNamePersion.setText(mName);
+		tvNamePersion.setText(mPerson.getTextName().toString());
 		edtName = (EditText) mView.findViewById(R.id.edtUserName);
-		edtName.setText(mName);
-	    edtDescription = (EditText) mView.findViewById(R.id.edtDescription);
-		edtDescription.setText(mDescription);
+		edtDescription = (EditText) mView.findViewById(R.id.edtDescription);
+		edtName.setText(mPerson.getTextName().toString());
+		edtDescription.setText(mPerson.getTextDescrition().toString());
 		mManager = getActivity().getSupportFragmentManager();
 		TextView btnSave = (TextView) mView.findViewById(R.id.btnSave);
 		TextView btnCancel = (TextView) mView.findViewById(R.id.btnCancel);
@@ -48,15 +63,22 @@ public class DetailFragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				FragmentTransaction trans = mManager.beginTransaction();
-				trans.replace(R.id.content_frame, new MainFragment());
+				trans.replace(R.id.content_frame, MainActivity.main);
 				trans.commit();
 			}
 		});
 		btnSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-			//	Person s = new Person();
-			//	mName = edtName.getText();
+				if(mSave!=null){
+				
+				mPerson.setTextName(edtName.getText().toString());
+				mPerson.setTextDescrition(edtDescription.getText().toString());
+				mSave.onCLick(mPerson);
+				FragmentTransaction trans = mManager.beginTransaction();
+				trans.replace(R.id.content_frame, MainActivity.main);
+				trans.commit();
+				}
 			}
 		});
 		return mView;

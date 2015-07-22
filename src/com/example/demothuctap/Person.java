@@ -3,9 +3,10 @@ package com.example.demothuctap;
 public class Person {
 	String textName,textDescrition;
 	int img;
-	Person mPerson;
-	public Person(){
-		
+	public Person(int img,String textName,String textDescription){
+		this.textName = textName;
+		this.textDescrition = textDescription;
+		this.img = img;
 	}
 	protected String getTextName() {
 		return textName;
@@ -24,9 +25,6 @@ public class Person {
 	}
 	protected void setImg(int img) {
 		this.img = img;
-	}
-	public Person getPerson(){
-		return mPerson;
 	}
 	
 }
