@@ -16,41 +16,46 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 /**
  * 
- * @author dnp_it
- * Create DetailFragment 
- * 
+ * @author dnp_it Create DetailFragment
+ * show information persion 
+ * action item save and cancel in fragment
  */
-public class DetailFragment extends Fragment{
-	private String mName,mDescription;
+public class DetailFragment extends Fragment {
+	private String mName, mDescription;
 	private int mImg;
 	private FragmentManager mManager;
 	private int position;
 	private ArrayList<Person> arr;
-	private EditText edtName,edtDescription;
+	private EditText edtName, edtDescription;
 	private Person mPerson;
-	
-	interface onClickSave{
+	//create interface of funtion save
+	interface onClickSave {
 		void onCLick(Person person);
 	}
-	
+
 	public onClickSave mSave;
-	
-	public void setOnClickSave(onClickSave save){
+
+	public void setOnClickSave(onClickSave save) {
 		this.mSave = save;
 	}
-	
+
 	public DetailFragment(Person mPerson) {
 		this.mPerson = mPerson;
 	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View mView = inflater.inflate(R.layout.fragment_detail, container,false);
-		RelativeLayout rlImg = (RelativeLayout) mView.findViewById(R.id.rlImagePersion);
+		View mView = inflater.inflate(R.layout.fragment_detail, container,
+				false);
+		RelativeLayout rlImg = (RelativeLayout) mView
+				.findViewById(R.id.rlImagePersion);
 		rlImg.setBackgroundResource(mPerson.getImg());
-		TextView tvNamePersion = (TextView) mView.findViewById(R.id.tvNamePersion);
+		TextView tvNamePersion = (TextView) mView
+				.findViewById(R.id.tvNamePersion);
 		tvNamePersion.setText(mPerson.getTextName().toString());
 		edtName = (EditText) mView.findViewById(R.id.edtUserName);
 		edtDescription = (EditText) mView.findViewById(R.id.edtDescription);
@@ -59,6 +64,7 @@ public class DetailFragment extends Fragment{
 		mManager = getActivity().getSupportFragmentManager();
 		TextView btnSave = (TextView) mView.findViewById(R.id.btnSave);
 		TextView btnCancel = (TextView) mView.findViewById(R.id.btnCancel);
+		//action cancel button
 		btnCancel.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -67,17 +73,18 @@ public class DetailFragment extends Fragment{
 				trans.commit();
 			}
 		});
+		//action save button
 		btnSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if(mSave!=null){
-				
-				mPerson.setTextName(edtName.getText().toString());
-				mPerson.setTextDescrition(edtDescription.getText().toString());
-				mSave.onCLick(mPerson);
-				FragmentTransaction trans = mManager.beginTransaction();
-				trans.replace(R.id.content_frame, MainActivity.main);
-				trans.commit();
+				if (mSave != null) {
+					mPerson.setTextName(edtName.getText().toString());
+					mPerson.setTextDescrition(edtDescription.getText()
+							.toString());
+					mSave.onCLick(mPerson);
+					FragmentTransaction trans = mManager.beginTransaction();
+					trans.replace(R.id.content_frame, MainActivity.main);
+					trans.commit();
 				}
 			}
 		});

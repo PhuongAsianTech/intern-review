@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.provider.Telephony.Sms.Conversations;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -20,7 +21,10 @@ import android.widget.TextView;
 /**
  * 
  * @author dnp_it
- * @create adapter of listview
+ * @create this class set adapter of listview
+ * The class static myViewHolder create itemlistview
+ * The methods setTextView(),setImageView() setting item listview 
+ * 
  */
 public class ListViewAdapter extends BaseAdapter {
 
@@ -29,10 +33,19 @@ public class ListViewAdapter extends BaseAdapter {
 	private Context mContext;
 	private Dialog mdialog;
 	private FragmentManager manager;
+	private ArrayList<Person> myArray = null;
+	/**
+	 * 
+	 * @param mContext
+	 * @param mArray the ArrayList data item of listview
+	 * 
+	 */
 	public ListViewAdapter(Context mContext, ArrayList<Person> mArray) {
 		this.mContext = mContext;
 		this.mArray = mArray;
 		this.mInflater = LayoutInflater.from(this.mContext);
+		myArray = new ArrayList<Person>();
+		myArray.addAll(mArray);
 	}
 
 	@Override
@@ -71,19 +84,35 @@ public class ListViewAdapter extends BaseAdapter {
 				.get(position).getTextName());
 		return convertView;
 	}
-
+	/**
+	 * set TextView item on listview
+	 * @param view
+	 * @param id the id of textview item
+	 * @param text the string textview item
+	 * @return the textview sitting
+	 */
 	public TextView setTextView(View view, int id, String text) {
 		TextView tv = (TextView) view.findViewById(id);
 		tv.setText(text);
 		return tv;
 	}
-
+	/**
+	 * set ImageView item on listview
+	 * @param view
+	 * @param id the id of imageview item
+	 * @param img the id of image item sitting
+	 * @return the imageview sitting
+	 */
 	public ImageView setImageView(View view, int id, int img) {
 		ImageView iv = (ImageView) view.findViewById(id);
 		iv.setImageResource(img);
 		return iv;
 	}
-
+	/**
+	 * 
+	 * @author dnp_it
+	 *	this class set holder data listview
+	 */
 	public static class myViewHolder {
 		ImageView img,imgcheck;
 		TextView txt_name, txt_class;

@@ -1,8 +1,18 @@
 package com.example.demothuctap;
-
+/**
+ * 
+ * @author dnp_it
+ * The Object Person data of listview
+ */
 public class Person {
 	String textName,textDescrition;
 	int img;
+	/**
+	 * this constructor object Person
+	 * @param img the image of person
+	 * @param textName the name of person
+	 * @param textDescription the description of person
+	 */
 	public Person(int img,String textName,String textDescription){
 		this.textName = textName;
 		this.textDescrition = textDescription;

@@ -17,7 +17,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+/**
+ * 
+ * @author dnp_it
+ * Demo show data fragment and action item funtion in listview
+ *
+ */
 public class MainActivity extends ActionBarActivity {
 	private ActionBar mActionBar;
 	private FragmentManager mManager;
@@ -26,11 +31,11 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		// hide actionbar
+		//hide actionbar
 		mActionBar = getSupportActionBar();
 		mActionBar.hide();
 		main = new MainFragment();
-		//
+		//show fragment main 
 		mManager = getSupportFragmentManager();
 		FragmentTransaction trans = mManager.beginTransaction();
 		trans.replace(R.id.content_frame, main);
@@ -44,6 +49,7 @@ public class MainActivity extends ActionBarActivity {
 		});
 	}
 	
+	//set action item menu back 
 	@Override
 	public void onBackPressed() {
 		if(MainFragment.check==false){
@@ -55,6 +61,4 @@ public class MainActivity extends ActionBarActivity {
 			MainFragment.check = !MainFragment.check;
 		}
 	}
-
-	
 }
