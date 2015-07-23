@@ -5,36 +5,36 @@ package com.example.demothuctap;
  * The Object Person data of listview
  */
 public class Person {
-	String textName,textDescrition;
-	int img;
+	private String mTextName,mTextDescrition;
+	private int mImg;
 	/**
 	 * this constructor object Person
 	 * @param img the image of person
 	 * @param textName the name of person
 	 * @param textDescription the description of person
 	 */
-	public Person(int img,String textName,String textDescription){
-		this.textName = textName;
-		this.textDescrition = textDescription;
-		this.img = img;
+	protected Person(int img,String textName,String textDescription){
+		this.mTextName = textName;
+		this.mTextDescrition = textDescription;
+		this.mImg = img;
 	}
 	protected String getTextName() {
-		return textName;
+		return mTextName;
 	}
 	protected String getTextDescrition() {
-		return textDescrition;
+		return mTextDescrition;
 	}
 	protected int getImg() {
-		return img;
+		return mImg;
 	}
 	protected void setTextName(String textName) {
-		this.textName = textName;
+		this.mTextName = textName;
 	}
 	protected void setTextDescrition(String textDescrition) {
-		this.textDescrition = textDescrition;
+		this.mTextDescrition = textDescrition;
 	}
 	protected void setImg(int img) {
-		this.img = img;
+		this.mImg = img;
 	}
 	
 }

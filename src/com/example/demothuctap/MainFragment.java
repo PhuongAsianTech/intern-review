@@ -38,9 +38,8 @@ public class MainFragment extends Fragment {
 	private ListView lvData;
 	private Dialog mDialog;
 	private FragmentManager mManager;
-	public ProgressDialog mProgressDialog;
 	public boolean isLoadMore = false;
-	public static boolean check = false;
+	public static boolean sCheck = false;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +68,7 @@ public class MainFragment extends Fragment {
 						FragmentTransaction trans = mManager.beginTransaction();
 						trans.replace(R.id.content_frame, detail);
 						trans.commit();
-						check = true;
+						sCheck = true;
 						// action onclick item button save
 						detail.setOnClickSave(new onClickSave() {
 							@Override
@@ -137,7 +136,7 @@ public class MainFragment extends Fragment {
 	 * @param mPosition input position select item listview
 	 * 
 	 */
-	public void DialogShow(final int mPosition) {
+	private void DialogShow(final int mPosition) {
 		mDialog = new Dialog(getActivity());
 		mDialog.setContentView(R.layout.custom_dialog);
 		mDialog.setTitle("This is Menu Dialog!");
@@ -169,32 +168,32 @@ public class MainFragment extends Fragment {
 	/**
 	 * load data in listview
 	 */
-	public void loadListView() {
-		Person mPerson1 = new Person(R.drawable.ic_listview_item1,
+	private void loadListView() {
+		Person mPerson1 = new Person(R.drawable.img_listview_item1,
 				"Brunch this weekend?", "Description Brunch this weekend?");
 		mArray.add(mPerson1);
-		Person mPerson2 = new Person(R.drawable.ic_listview_item2,
+		Person mPerson2 = new Person(R.drawable.img_listview_item2,
 				"Summer BBQ", "Description Summer BBQ");
 		mArray.add(mPerson2);
-		Person mPerson3 = new Person(R.drawable.ic_listview_item3, "Oui Oui",
+		Person mPerson3 = new Person(R.drawable.img_listview_item3, "Oui Oui",
 				"Description Oui Oui");
 		mArray.add(mPerson3);
-		Person mPerson4 = new Person(R.drawable.ic_listview_item4,
+		Person mPerson4 = new Person(R.drawable.img_listview_item4,
 				"Birthday Git", "Description Birthday Git");
 		mArray.add(mPerson4);
-		Person mPerson5 = new Person(R.drawable.ic_listview_item5,
+		Person mPerson5 = new Person(R.drawable.img_listview_item5,
 				"Recipe to try", "Description Recipe to try");
 		mArray.add(mPerson5);
-		Person mPerson6 = new Person(R.drawable.ic_listview_item6,
+		Person mPerson6 = new Person(R.drawable.img_listview_item6,
 				"Giants game", "Description Giants game");
 		mArray.add(mPerson6);
-		Person mPerson7 = new Person(R.drawable.ic_listview_item7,
+		Person mPerson7 = new Person(R.drawable.img_listview_item7,
 				"Giants game", "Description Giants game");
 		mArray.add(mPerson7);
-		Person mPerson8 = new Person(R.drawable.ic_listview_item7,
+		Person mPerson8 = new Person(R.drawable.img_listview_item7,
 				"Giants game", "Description Giants game");
 		mArray.add(mPerson8);
-		Person mPerson9 = new Person(R.drawable.ic_listview_item7,
+		Person mPerson9 = new Person(R.drawable.img_listview_item7,
 				"Giants game", "Description Giants game");
 		mArray.add(mPerson9);
 
@@ -206,6 +205,7 @@ public class MainFragment extends Fragment {
 	 * action load more item listview
 	 */
 	private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
+		private ProgressDialog mProgressDialog;
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
@@ -242,8 +242,8 @@ public class MainFragment extends Fragment {
 	/**
 	 * add item data load more
 	 */
-	public void loading() {
-		Person mPerson = new Person(R.drawable.ic_listview_item1,
+	private void loading() {
+		Person mPerson = new Person(R.drawable.img_listview_item1,
 				"Brunch this weekend?", "Description Brunch this weekend?");
 		mArray.add(mPerson);
 	}

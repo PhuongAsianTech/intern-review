@@ -12,7 +12,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:scaleType="center"
-        android:src="@drawable/ic_listview_item1" />
+        android:src="@drawable/img_listview_item1" />
 
     <TextView
         android:id="@+id/tvTextNameItem"

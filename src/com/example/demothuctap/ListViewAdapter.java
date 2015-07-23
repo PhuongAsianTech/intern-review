@@ -1,20 +1,12 @@
 package com.example.demothuctap;
 
 import java.util.ArrayList;
-
-import android.app.Dialog;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.os.PersistableBundle;
-import android.provider.Telephony.Sms.Conversations;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,8 +23,6 @@ public class ListViewAdapter extends BaseAdapter {
 	private ArrayList<Person> mArray = new ArrayList<Person>();
 	private LayoutInflater mInflater;
 	private Context mContext;
-	private Dialog mdialog;
-	private FragmentManager manager;
 	private ArrayList<Person> myArray = null;
 	/**
 	 * 
@@ -66,21 +56,22 @@ public class ListViewAdapter extends BaseAdapter {
 		return 0;
 	}
 	
+	@SuppressLint("InflateParams")
 	@Override
 	public View getView(final int position,  View convertView, ViewGroup parent) {
 		myViewHolder holder;
 		mInflater = (LayoutInflater) mContext
-				.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.item_list_data, null);
+			convertView = mInflater.inflate(R.layout.item_list_data, parent,false);
 			holder = new myViewHolder();
 			convertView.setTag(holder);
 		} else {
 			holder = (myViewHolder) convertView.getTag();
 		}
-		holder.img = setImageView(convertView, R.id.imgItemPeople,
+		holder.imgPerson = setImageView(convertView, R.id.imgItemPeople,
 				mArray.get(position).getImg());
-		holder.txt_name = setTextView(convertView, R.id.tvTextNameItem, mArray
+		holder.tvName= setTextView(convertView, R.id.tvTextNameItem, mArray
 				.get(position).getTextName());
 		return convertView;
 	}
@@ -91,7 +82,7 @@ public class ListViewAdapter extends BaseAdapter {
 	 * @param text the string textview item
 	 * @return the textview sitting
 	 */
-	public TextView setTextView(View view, int id, String text) {
+	private TextView setTextView(View view, int id, String text) {
 		TextView tv = (TextView) view.findViewById(id);
 		tv.setText(text);
 		return tv;
@@ -103,7 +94,7 @@ public class ListViewAdapter extends BaseAdapter {
 	 * @param img the id of image item sitting
 	 * @return the imageview sitting
 	 */
-	public ImageView setImageView(View view, int id, int img) {
+	private ImageView setImageView(View view, int id, int img) {
 		ImageView iv = (ImageView) view.findViewById(id);
 		iv.setImageResource(img);
 		return iv;
@@ -114,7 +105,7 @@ public class ListViewAdapter extends BaseAdapter {
 	 *	this class set holder data listview
 	 */
 	public static class myViewHolder {
-		ImageView img,imgcheck;
-		TextView txt_name, txt_class;
+		public ImageView imgPerson;
+		public TextView tvName;
 	}
 }

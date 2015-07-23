@@ -1,9 +1,7 @@
 package com.example.demothuctap;
 
-import java.util.ArrayList;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,10 +10,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * 
@@ -24,12 +20,8 @@ import android.widget.Toast;
  * action item save and cancel in fragment
  */
 public class DetailFragment extends Fragment {
-	private String mName, mDescription;
-	private int mImg;
 	private FragmentManager mManager;
-	private int position;
-	private ArrayList<Person> arr;
-	private EditText edtName, edtDescription;
+	private EditText mEdtName, mEdtDescription;
 	private Person mPerson;
 	//create interface of funtion save
 	interface onClickSave {
@@ -57,10 +49,10 @@ public class DetailFragment extends Fragment {
 		TextView tvNamePersion = (TextView) mView
 				.findViewById(R.id.tvNamePersion);
 		tvNamePersion.setText(mPerson.getTextName().toString());
-		edtName = (EditText) mView.findViewById(R.id.edtUserName);
-		edtDescription = (EditText) mView.findViewById(R.id.edtDescription);
-		edtName.setText(mPerson.getTextName().toString());
-		edtDescription.setText(mPerson.getTextDescrition().toString());
+		mEdtName = (EditText) mView.findViewById(R.id.edtUserName);
+		mEdtDescription = (EditText) mView.findViewById(R.id.edtDescription);
+		mEdtName.setText(mPerson.getTextName().toString());
+		mEdtDescription.setText(mPerson.getTextDescrition().toString());
 		mManager = getActivity().getSupportFragmentManager();
 		TextView btnSave = (TextView) mView.findViewById(R.id.btnSave);
 		TextView btnCancel = (TextView) mView.findViewById(R.id.btnCancel);
@@ -69,7 +61,7 @@ public class DetailFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				FragmentTransaction trans = mManager.beginTransaction();
-				trans.replace(R.id.content_frame, MainActivity.main);
+				trans.replace(R.id.content_frame, MainActivity.sFragmentMain);
 				trans.commit();
 			}
 		});
@@ -78,12 +70,12 @@ public class DetailFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				if (mSave != null) {
-					mPerson.setTextName(edtName.getText().toString());
-					mPerson.setTextDescrition(edtDescription.getText()
+					mPerson.setTextName(mEdtName.getText().toString());
+					mPerson.setTextDescrition(mEdtDescription.getText()
 							.toString());
 					mSave.onCLick(mPerson);
 					FragmentTransaction trans = mManager.beginTransaction();
-					trans.replace(R.id.content_frame, MainActivity.main);
+					trans.replace(R.id.content_frame, MainActivity.sFragmentMain);
 					trans.commit();
 				}
 			}

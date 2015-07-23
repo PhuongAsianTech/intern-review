@@ -1916,14 +1916,14 @@ containing a value of this type.
         public static final int ic_delete=0x7f02003f;
         public static final int ic_edit=0x7f020040;
         public static final int ic_launcher=0x7f020041;
-        public static final int ic_listview_item1=0x7f020042;
-        public static final int ic_listview_item2=0x7f020043;
-        public static final int ic_listview_item3=0x7f020044;
-        public static final int ic_listview_item4=0x7f020045;
-        public static final int ic_listview_item5=0x7f020046;
-        public static final int ic_listview_item6=0x7f020047;
-        public static final int ic_listview_item7=0x7f020048;
-        public static final int ic_rows_actionbar=0x7f020049;
+        public static final int ic_rows_actionbar=0x7f020042;
+        public static final int img_listview_item1=0x7f020043;
+        public static final int img_listview_item2=0x7f020044;
+        public static final int img_listview_item3=0x7f020045;
+        public static final int img_listview_item4=0x7f020046;
+        public static final int img_listview_item5=0x7f020047;
+        public static final int img_listview_item6=0x7f020048;
+        public static final int img_listview_item7=0x7f020049;
     }
     public static final class id {
         public static final int action_bar=0x7f090040;
